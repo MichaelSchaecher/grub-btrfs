@@ -97,10 +97,11 @@ GRUB_BTRFS_IGNORE_PREFIX_PATH=("var/lib/docker" "@var/lib/docker" "@/var/lib/doc
 # Default: "false"
 #GRUB_BTRFS_OVERRIDE_BOOT_PARTITION_DETECTION="true"
 
-# Location of the folder containing the "grub.cfg" file.
-# Might be grub2 on some systems.
-# Default: "/boot/grub"
-#GRUB_BTRFS_GRUB_DIRNAME="/boot/grub2"
+# Location of the folder containing the "grub.cfg" file. This might be grub2 on some systems;
+# however this has grown to be less common since the introduction of UEFI.
+# Default is set according to the distribution /etc/os-release ID variable. If the directory
+# is not found, the default is "/boot/efi/EFI/ubuntu".
+#GRUB_BTRFS_GRUB_DIRNAME="/boot/efi/EFI/ubuntu"
 
 # Location of kernels/initramfs/microcode.
 # Use by "grub-btrfs" to detect the boot partition and the location of kernels/initrafms/microcodes.
